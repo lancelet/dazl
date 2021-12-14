@@ -1,0 +1,32 @@
+cabal-version:      2.4
+name:               dazl
+version:            0.1.0.0
+synopsis:           Canvas renderer.
+description:        2D canvas renderer.
+bug-reports:        https://github.com/lancelet/dazl/issues
+license:            BSD-3-Clause
+author:             Jonathan Merritt
+maintainer:         j.s.merritt@gmail.com
+copyright:          Copyright (C) Jonathan Merritt 2021
+category:           Graphics
+extra-source-files: CHANGELOG.md
+
+common base
+  default-language: GHC2021
+  build-depends:    base ^>=4.16.0.0
+
+common ghc-options
+  ghc-options:
+    -Wall -Wcompat -Wincomplete-record-updates
+    -Wincomplete-uni-patterns -Wredundant-constraints
+
+library
+  import:          base, ghc-options
+  exposed-modules: MyLib
+  hs-source-dirs:  src
+
+executable dazl
+  import:         base, ghc-options
+  main-is:        Main.hs
+  build-depends:  dazl
+  hs-source-dirs: app
