@@ -22,7 +22,10 @@ common ghc-options
 
 library
   import:          base, ghc-options
-  exposed-modules: MyLib
+  exposed-modules:
+    Dazl.JumpMix
+    MyLib
+
   hs-source-dirs:  src
 
 executable dazl
